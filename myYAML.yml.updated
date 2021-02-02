@@ -1,0 +1,3 @@
+- apps: [htop, sshd, iptables, Gaju]
+  hosts: all
+  name: Alta3 Research
