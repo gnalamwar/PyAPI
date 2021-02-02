@@ -17,7 +17,17 @@ def main():
 
         ## Decode the response
         got_dj = gotresp.json()
-        pprint.pprint(got_dj)
+        print(got_dj["name"])
+        #pprint.pprint(got_dj)
+        for house in got_dj["allegiances"]:
+            #print("Allegiance :", requests.get(house).json()["name"])
+            houseresp = requests.get(house)
+            house_dj = houseresp.json()
+            house_name =  house_dj["name"]
+            print("Allegiance :", house_name)
+
+        for book in got_dj["books"]:
+            print("Books :", requests.get(book).json()["name"])
 
 if __name__ == "__main__":
         main()
