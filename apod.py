@@ -16,8 +16,10 @@ def main():
     ## remove any "extra" new line feeds on our key
     nasacreds = "api_key=" + nasacreds.strip("\n")
 
+    date = "date=2020-01-01"
     ## Call the webservice with our key
-    apodurlobj = urllib.request.urlopen(NASAAPI + nasacreds)
+    #apodurlobj = urllib.request.urlopen(NASAAPI + nasacreds)
+    apodurlobj  = urllib.request.urlopen(NASAAPI + '&' + date  + "&"  + nasacreds)
 
     ## read the file-like object
     apodread = apodurlobj.read()
@@ -25,7 +27,7 @@ def main():
     ## decode JSON to Python data structure
     apod = json.loads(apodread.decode("utf-8"))
 
-    ## display our Pythonic data
+
     print("\n\nConverted Python data")
     print(apod)
 
@@ -38,7 +40,8 @@ def main():
     print(apod["explanation"] + "\n")
 
     print(apod["url"])
-
+    #print(BirthdayURL)
+#https://api.nasa.gov/neo/rest/v1/feed?start_date=2019-11-11&api_key=1KPXBQ9JCzlbsSwrFkFL9w2xiJD2ho3ChVZnLyb6
     ## Uncomment the code below if running in a GUI
     ## and you want to open the URL in a browser
     ## use Firefox to open the HTTPS URL
