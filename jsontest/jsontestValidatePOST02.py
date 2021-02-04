@@ -47,7 +47,9 @@ def main():
 
     mydata = {}
     mydata["json"] = str(jsonToTest)
-
+    
+    print(f"My Data: {mydata}")
+    print()
     ## PART E
     # use requests library to send an HTTP POST
     resp = requests.post(VALIDURL, data=mydata)
