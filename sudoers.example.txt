@@ -1,0 +1,7 @@
+# This lab environmen is configured to run commands that does not needs sudo command to get root previleges. 
+student@bchd:~/pyapi$ sudo -l
+Matching Defaults entries for student on bchd:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User student may run the following commands on bchd:
+    (ALL) NOPASSWD: ALL
